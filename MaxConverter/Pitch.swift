@@ -11,8 +11,9 @@ typealias Pitch = Int
 typealias LyString = String
 
 enum PitchError: Error {
-    case notASharp, notAFlat
+    case notASharp, notAFlat, notWhite, startEndWhitePitchsXOR
 }
+
 
 extension Pitch {
     var pitchClass: Pitch {
@@ -36,7 +37,7 @@ extension Pitch {
             pitch += 12
             commasOrApostophes += ","
         }
-        return commasOrApostophes
+        return commasOrApostophes + " "
     }
     
     func asSharp() throws -> LyString {
@@ -73,5 +74,45 @@ extension Pitch {
         } else {
             throw PitchError.notAFlat
         }
+    }
+    
+    func asWhite() throws -> LyString {
+        let commasOrApostophes = addCommasApostrophes()
+        let pitchClass = self.pitchClass
+        if pitchClass == 0 {
+            return "c" + commasOrApostophes
+        } else if pitchClass == 2 {
+            return "d" + commasOrApostophes
+        } else if pitchClass == 4 {
+            return "e" + commasOrApostophes
+        } else if pitchClass == 5 {
+            return "f" + commasOrApostophes
+        } else if pitchClass == 7 {
+            return "g" + commasOrApostophes
+        } else if pitchClass == 9 {
+           return "a" + commasOrApostophes
+        } else if pitchClass == 11 {
+           return "b" + commasOrApostophes
+       } else {
+            throw PitchError.notWhite
+        }
+    }
+    
+    var avoidance -> [Pitch: IntervalAvoidance] {
+        let pitchClass = self.pitchClass
+        if pitchClass == 0 { return IntervalAvoidance.c }
+        if pitchClass == 0 { }
+        if pitchClass == 0 { }
+        if pitchClass == 0 { }
+        if pitchClass == 0 { }
+        if pitchClass == 0 { }
+        if pitchClass == 0 { }
+        if pitchClass == 0 { }
+    }
+    
+    func avoidIntervals(withBlack blackPitch: Pitch) -> BlackNoteStyle {
+        let whitePC = self.pitchClass
+        let blackPC = blackPitch.pitchClass
+        
     }
 }

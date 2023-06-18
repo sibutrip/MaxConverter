@@ -7,5 +7,4 @@
 
 import Foundation
 
-print("Hello, World!")
-
+print(IntervalAvoidance.flat1 == IntervalAvoidance.sharp1)

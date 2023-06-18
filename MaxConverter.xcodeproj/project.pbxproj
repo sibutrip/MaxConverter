@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		743765F62A3E7B28001563C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743765F52A3E7B28001563C6 /* main.swift */; };
 		743765FD2A3E7B5E001563C6 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743765FC2A3E7B5E001563C6 /* Pitch.swift */; };
+		743765FF2A3F3A35001563C6 /* IntervalAvoidance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743765FE2A3F3A35001563C6 /* IntervalAvoidance.swift */; };
+		743766012A3F3C45001563C6 /* BlackNoteStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743766002A3F3C45001563C6 /* BlackNoteStyle.swift */; };
+		743766032A3F3F0A001563C6 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743766022A3F3F0A001563C6 /* Bool+Extension.swift */; };
+		743766072A3F4119001563C6 /* MelodyNotater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743766062A3F4119001563C6 /* MelodyNotater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +31,10 @@
 		743765F22A3E7B28001563C6 /* MaxConverter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MaxConverter; sourceTree = BUILT_PRODUCTS_DIR; };
 		743765F52A3E7B28001563C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		743765FC2A3E7B5E001563C6 /* Pitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
+		743765FE2A3F3A35001563C6 /* IntervalAvoidance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalAvoidance.swift; sourceTree = "<group>"; };
+		743766002A3F3C45001563C6 /* BlackNoteStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackNoteStyle.swift; sourceTree = "<group>"; };
+		743766022A3F3F0A001563C6 /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
+		743766062A3F4119001563C6 /* MelodyNotater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyNotater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,10 @@
 			children = (
 				743765F52A3E7B28001563C6 /* main.swift */,
 				743765FC2A3E7B5E001563C6 /* Pitch.swift */,
+				743765FE2A3F3A35001563C6 /* IntervalAvoidance.swift */,
+				743766022A3F3F0A001563C6 /* Bool+Extension.swift */,
+				743766062A3F4119001563C6 /* MelodyNotater.swift */,
+				743766002A3F3C45001563C6 /* BlackNoteStyle.swift */,
 			);
 			path = MaxConverter;
 			sourceTree = "<group>";
@@ -124,7 +136,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				743765FD2A3E7B5E001563C6 /* Pitch.swift in Sources */,
+				743766032A3F3F0A001563C6 /* Bool+Extension.swift in Sources */,
+				743766072A3F4119001563C6 /* MelodyNotater.swift in Sources */,
 				743765F62A3E7B28001563C6 /* main.swift in Sources */,
+				743765FF2A3F3A35001563C6 /* IntervalAvoidance.swift in Sources */,
+				743766012A3F3C45001563C6 /* BlackNoteStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
