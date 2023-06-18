@@ -8,12 +8,10 @@
 import Foundation
 
 typealias Pitch = Int
-typealias LyString = String
 
 enum PitchError: Error {
     case notASharp, notAFlat, notWhite, startEndWhitePitchsXOR, notBlack
 }
-
 
 extension Pitch {
     var pitchClass: Pitch {

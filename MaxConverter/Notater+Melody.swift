@@ -13,7 +13,7 @@ extension Notater {
         case noBlackNotes, unknown
     }
     
-    public func notate(melody: [Int]) throws -> [LyString] {
+    public func melody(from melody: [Int]) throws -> [LyString] {
         var lyScore = [LyString]()
         var firstWhite: Pitch?
         var lastWhite: Pitch?

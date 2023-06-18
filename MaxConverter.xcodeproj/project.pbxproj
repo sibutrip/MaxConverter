@@ -14,6 +14,7 @@
 		743766072A3F4119001563C6 /* Notater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743766062A3F4119001563C6 /* Notater.swift */; };
 		743766092A3F6309001563C6 /* Notater+Melody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743766082A3F6309001563C6 /* Notater+Melody.swift */; };
 		7437660B2A3F631C001563C6 /* Notater+Rhythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437660A2A3F631C001563C6 /* Notater+Rhythm.swift */; };
+		7437660D2A3F645C001563C6 /* LyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437660C2A3F645C001563C6 /* LyString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		743766062A3F4119001563C6 /* Notater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notater.swift; sourceTree = "<group>"; };
 		743766082A3F6309001563C6 /* Notater+Melody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notater+Melody.swift"; sourceTree = "<group>"; };
 		7437660A2A3F631C001563C6 /* Notater+Rhythm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notater+Rhythm.swift"; sourceTree = "<group>"; };
+		7437660C2A3F645C001563C6 /* LyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				743766082A3F6309001563C6 /* Notater+Melody.swift */,
 				7437660A2A3F631C001563C6 /* Notater+Rhythm.swift */,
 				743765FC2A3E7B5E001563C6 /* Pitch.swift */,
+				7437660C2A3F645C001563C6 /* LyString.swift */,
 				743765FE2A3F3A35001563C6 /* IntervalAvoidance.swift */,
 				743766002A3F3C45001563C6 /* BlackNoteStyle.swift */,
 			);
@@ -143,6 +146,7 @@
 				7437660B2A3F631C001563C6 /* Notater+Rhythm.swift in Sources */,
 				743765F62A3E7B28001563C6 /* main.swift in Sources */,
 				743766092A3F6309001563C6 /* Notater+Melody.swift in Sources */,
+				7437660D2A3F645C001563C6 /* LyString.swift in Sources */,
 				743765FF2A3F3A35001563C6 /* IntervalAvoidance.swift in Sources */,
 				743766012A3F3C45001563C6 /* BlackNoteStyle.swift in Sources */,
 			);
