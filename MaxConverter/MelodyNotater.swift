@@ -13,7 +13,6 @@ class MelodyNotater {
     }
     public func notate(melody: [Int]) throws -> [LyString] {
         var lyScore = [LyString]()
-        var indexOffset = 0
         var firstWhite: Pitch?
         var lastWhite: Pitch?
         var blackNotes = [Pitch]()
@@ -69,13 +68,7 @@ class MelodyNotater {
     private func blackNoteSegment(firstWhite: Pitch?, blackNotes: [Pitch], lastWhite: Pitch?) throws -> [LyString] {
         var lyScore = [LyString]()
         let blackNoteStyle = try blackNoteStyle(firstWhite: firstWhite, blackNotes: blackNotes, lastWhite: lastWhite)
-        //        if let firstWhite = firstWhite {
-        //            lyScore.append(try firstWhite.asWhite())
-        //        }
         try blackNotes.forEach { lyScore.append(try $0.asBlack(blackNoteStyle)) }
-        //        if let lastWhite = lastWhite {
-        //            lyScore.append(try lastWhite.asWhite())
-        //        }
         return lyScore
     }
     
