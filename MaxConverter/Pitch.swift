@@ -35,7 +35,7 @@ extension Pitch {
             pitch += 12
             commasOrApostophes += ","
         }
-        return commasOrApostophes + " "
+        return commasOrApostophes
     }
     
     func asBlack(_ blackNoteStyle: BlackNoteStyle) throws -> LyString {

@@ -27,11 +27,21 @@ enum Tuple {
     var raw: LyString {
         switch self {
         case .qtrip, .etrip, .strip:
-            return "\\tuplet 3/2 { "
+            return "\\tuplet 3/2 {"
         case .equint, .squint:
-            return "\\tuplet 5/4 { "
+            return "\\tuplet 5/4 {"
         case .esept, .ssept:
-            return "\\tuplet 7/4 { "
+            return "\\tuplet 7/4 {"
+        }
+    }
+    var length: Int {
+        switch self {
+        case .qtrip, .etrip, .strip:
+            return 3
+        case .equint, .squint:
+            return 5
+        case .esept, .ssept:
+            return 7
         }
     }
 }
@@ -41,11 +51,11 @@ enum Duration {
     var raw: LyString {
         switch self {
         case .quarter:
-            return "4 "
+            return "4"
         case .eighth:
-            return "8 "
+            return "8"
         case .sixteenth:
-            return "16 "
+            return "16"
         }
     }
 }
@@ -78,14 +88,14 @@ extension LyString {
         ["quarter","eighth","sixteenth"].contains(self)
     }
     
-    func tuple() throws -> LyString {
-        if self == "qtrip" { return Tuple.qtrip.raw }
-        if self == "etrip" { return Tuple.etrip.raw }
-        if self == "strip" { return Tuple.strip.raw }
-        if self == "equint" { return Tuple.equint.raw }
-        if self == "squint" { return Tuple.squint.raw }
-        if self == "esept" { return Tuple.esept.raw }
-        if self == "ssept" { return Tuple.ssept.raw }
+    func tuple() throws -> Tuple {
+        if self == "qtrip" { return Tuple.qtrip }
+        if self == "etrip" { return Tuple.etrip }
+        if self == "strip" { return Tuple.strip }
+        if self == "equint" { return Tuple.equint }
+        if self == "squint" { return Tuple.squint }
+        if self == "esept" { return Tuple.esept }
+        if self == "ssept" { return Tuple.ssept }
         throw LyStringError.notATuple
     }
     
@@ -94,10 +104,15 @@ extension LyString {
     }
     
     var isPitch: Bool {
-        Int(self) != nil
+        let trimmed = self.filter { ![",","'"].contains($0) }
+        return ["c","cis","des","d","dis","ees","e","f","fis","ges","g","gis","aes","a","ais","bes","b"].contains(trimmed)
     }
     
     var asPitch: Pitch {
         Int(self)!
+    }
+    
+    var isRest: Bool {
+        self == "r"
     }
 }
