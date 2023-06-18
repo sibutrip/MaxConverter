@@ -68,10 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				743765F52A3E7B28001563C6 /* main.swift */,
+				743766062A3F4119001563C6 /* MelodyNotater.swift */,
 				743765FC2A3E7B5E001563C6 /* Pitch.swift */,
 				743765FE2A3F3A35001563C6 /* IntervalAvoidance.swift */,
 				743766022A3F3F0A001563C6 /* Bool+Extension.swift */,
-				743766062A3F4119001563C6 /* MelodyNotater.swift */,
 				743766002A3F3C45001563C6 /* BlackNoteStyle.swift */,
 			);
 			path = MaxConverter;

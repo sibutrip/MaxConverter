@@ -7,4 +7,7 @@
 
 import Foundation
 
-print(IntervalAvoidance.flat1 == IntervalAvoidance.sharp1)
+let melodyNotater = MelodyNotater()
+print(
+    try! melodyNotater.notate(melody: [0,1,2,3])
+)

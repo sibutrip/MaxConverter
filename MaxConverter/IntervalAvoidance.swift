@@ -24,7 +24,17 @@ import Foundation
 // b_dict= {1:'flat1', 3:'flat3', 6:'flat1', 8:'flat1', 10:'flat2'}
 
 enum IntervalAvoidance {
-    case zero, sharp1, flat1, flat2, sharp2, flat3, sharp3, flat4, sharp4
+    case sharp1, flat1, flat2, sharp2, flat3, sharp3, flat4, sharp4
+    
+    var blackNoteStyle: BlackNoteStyle {
+        switch self {
+        case .sharp1,.sharp2,.sharp3,.sharp4:
+            return .flat
+        case .flat1,.flat2,.flat3,.flat4:
+            return .sharp
+        }
+    }
+    
     static var c: [Pitch: IntervalAvoidance] {
         [1: .sharp2,
          3: .sharp1,
@@ -95,8 +105,6 @@ extension IntervalAvoidance: Comparable {
             return 2
         case .sharp4:
             return 2
-        case .zero:
-            return 1
         }
     }
     static func < (lhs: IntervalAvoidance, rhs: IntervalAvoidance) -> Bool {
