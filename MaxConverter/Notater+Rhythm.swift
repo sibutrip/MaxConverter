@@ -8,15 +8,18 @@
 import Foundation
 
 extension Notater {
-    public func rhythm(from raw: String) throws -> [LyString] {
-        let scoreString = raw.components(separatedBy: " ").filter { !$0.isEmpty }
+    public func rhythm(from raw: String) throws -> String {
+        var scoreString = raw.components(separatedBy: " ").filter { !$0.isEmpty }
+        while Int(scoreString.first!) != nil {
+            _ = scoreString.removeFirst()
+        }
         let scoreInt = scoreString.compactMap { Int($0) }
         let scoreRhythms: [String?] = scoreString.map { lyString in
             if Int(lyString) == nil { return lyString } else { return nil }
         }
         var melody = try self.melody(from: scoreInt)
 
-        var scoreWithMelody = scoreRhythms.map { lyString in
+        let scoreWithMelody = scoreRhythms.map { lyString in
             if lyString == nil {
                 return melody.removeFirst()
             } else {
@@ -56,13 +59,14 @@ extension Notater {
                     let tupleLength = try lastTuple.tuple().length
                     newScore.insert("}", at: (index + tupleLength + indexOffset + 1))
                     newScore.insert(try lastTuple.duration(), at: index + indexOffset + 1)
+                    lastTupleLength = tupleLength + index
                 }
             }
         }
         newScore = newScore.map { $0 + " "}
         
-        print(scoreWithMelody.map { $0 + " "}.joined())
-        print(newScore.joined())
-        return []
+//        print(scoreWithMelody.map { $0 + " "}.joined())
+//        print(newScore.joined())
+        return newScore.joined()
     }
 }

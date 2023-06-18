@@ -7,7 +7,10 @@
 
 import Foundation
 
-//let raw = "eighth 53 54 55 sixteenth 49 54 quarter 51 55 etrip 49 44 37 43 39 37 sixteenth 41 39 44 41 39 37 43 53 quarter 50 51 55 qtrip 50 53 53 55 65 67 etrip 62 67 77 eighth 74 77 qtrip 79 77 74 "
-//let raw = "qtrip 60 60 60 sixteenth 60 60 60 60 qtrip 60 60 60 sixteenth 60 60 60 60"
-let raw = "eighth 53 54 55 sixteenth 49 54 quarter 51 55 etrip 49 44 37 43 39 37 sixteenth 41 39 44 41 39 37 43 53 quarter 50 51 55 qtrip 50 53 53 55 65 67 etrip 62 67 77 eighth 74 77 qtrip 79 77 74 "
-let x = try! Notater().rhythm(from: raw)
+let notater = Notater(title: "test")
+
+try! notater.format(fileFromPath: "cello", fileType: ".txt", clef: "bass")
+try! notater.format(fileFromPath: "trombone", fileType: ".txt", clef: "bass")
+try! notater.format(fileFromPath: "bassoon", fileType: ".txt", clef: "tenor")
+try! notater.format(fileFromPath: "violin", fileType: ".txt", clef: "treble")
+

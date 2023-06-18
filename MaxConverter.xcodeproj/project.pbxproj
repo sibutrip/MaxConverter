@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740CFE122A3FAC090074FD8D /* Notater+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CFE112A3FAC090074FD8D /* Notater+Formatting.swift */; };
 		743765F62A3E7B28001563C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743765F52A3E7B28001563C6 /* main.swift */; };
 		743765FD2A3E7B5E001563C6 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743765FC2A3E7B5E001563C6 /* Pitch.swift */; };
 		743765FF2A3F3A35001563C6 /* IntervalAvoidance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743765FE2A3F3A35001563C6 /* IntervalAvoidance.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		740CFE112A3FAC090074FD8D /* Notater+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notater+Formatting.swift"; sourceTree = "<group>"; };
 		743765F22A3E7B28001563C6 /* MaxConverter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MaxConverter; sourceTree = BUILT_PRODUCTS_DIR; };
 		743765F52A3E7B28001563C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		743765FC2A3E7B5E001563C6 /* Pitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				743766062A3F4119001563C6 /* Notater.swift */,
 				743766082A3F6309001563C6 /* Notater+Melody.swift */,
 				7437660A2A3F631C001563C6 /* Notater+Rhythm.swift */,
+				740CFE112A3FAC090074FD8D /* Notater+Formatting.swift */,
 				743765FC2A3E7B5E001563C6 /* Pitch.swift */,
 				7437660C2A3F645C001563C6 /* LyString.swift */,
 				743765FE2A3F3A35001563C6 /* IntervalAvoidance.swift */,
@@ -146,6 +149,7 @@
 				7437660B2A3F631C001563C6 /* Notater+Rhythm.swift in Sources */,
 				743765F62A3E7B28001563C6 /* main.swift in Sources */,
 				743766092A3F6309001563C6 /* Notater+Melody.swift in Sources */,
+				740CFE122A3FAC090074FD8D /* Notater+Formatting.swift in Sources */,
 				7437660D2A3F645C001563C6 /* LyString.swift in Sources */,
 				743765FF2A3F3A35001563C6 /* IntervalAvoidance.swift in Sources */,
 				743766012A3F3C45001563C6 /* BlackNoteStyle.swift in Sources */,
