@@ -1,5 +1,5 @@
 //
-//  MelodyNotater.swift
+//  Notater+Melody.swift
 //  MaxConverter
 //
 //  Created by Cory Tripathy on 6/18/23.
@@ -7,10 +7,12 @@
 
 import Foundation
 
-class MelodyNotater {
+extension Notater {
+    
     enum MelodyError: Error {
         case noBlackNotes, unknown
     }
+    
     public func notate(melody: [Int]) throws -> [LyString] {
         var lyScore = [LyString]()
         var firstWhite: Pitch?
@@ -97,8 +99,8 @@ class MelodyNotater {
         }
         throw MelodyError.unknown
     }
+    
     private func compareAdjacentIntervals(firstWhite: Pitch, firstBlack: Pitch) throws -> BlackNoteStyle {
-        
         if (firstWhite == 0 && firstBlack == 1) || (firstWhite == 2 && firstBlack == 3) || (firstWhite == 4 && firstBlack == 6) || (firstWhite == 5 && firstBlack == 6) || (firstWhite == 7 && firstBlack == 8) || (firstWhite == 9 && firstBlack == 10) || (firstWhite == 11 && firstBlack == 1) {
             return .sharp
         }
