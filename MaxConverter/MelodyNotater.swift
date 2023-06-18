@@ -9,7 +9,7 @@ import Foundation
 
 class MelodyNotater {
     enum MelodyError: Error {
-        case noBlackNotes, noWhiteNotes, unknown
+        case noBlackNotes, unknown
     }
     public func notate(melody: [Int]) throws -> [LyString] {
         var lyScore = [LyString]()
@@ -18,10 +18,16 @@ class MelodyNotater {
         var lastWhite: Pitch?
         var blackNotes = [Pitch]()
         for index in 0..<melody.count {
+            let currentPitch = melody[index]
             if index < melody.count - 1 {
-                let currentPitch = melody[index]
-                let nextPitch = melody[index]
+                let nextPitch = melody[index + 1]
                 if currentPitch.isWhite && nextPitch.isWhite {
+                    if !blackNotes.isEmpty {
+                        lastWhite = currentPitch
+                        lyScore += try blackNoteSegment(firstWhite: firstWhite, blackNotes: blackNotes, lastWhite: lastWhite)
+                        blackNotes.removeAll()
+                        lastWhite = nil
+                    }
                     lyScore.append(try currentPitch.asWhite())
                 } else if currentPitch.isWhite && nextPitch.isBlack {
                     if !blackNotes.isEmpty {
@@ -30,11 +36,30 @@ class MelodyNotater {
                         blackNotes.removeAll()
                         lastWhite = nil
                     }
+                    lyScore.append(try currentPitch.asWhite())
                     firstWhite = currentPitch
                 } else if currentPitch.isBlack {
                     blackNotes.append(currentPitch)
                 } else {
                     throw MelodyError.unknown
+                }
+            } else {
+                if !blackNotes.isEmpty {
+                    if currentPitch.isBlack {
+                        blackNotes.append(currentPitch)
+                    } else {
+                        lastWhite = currentPitch
+                    }
+                    lyScore += try blackNoteSegment(firstWhite: firstWhite, blackNotes: blackNotes, lastWhite: lastWhite)
+                    if currentPitch.isWhite {
+                        lyScore.append(try currentPitch.asWhite())
+                    }
+                } else {
+                    if currentPitch.isWhite {
+                        lyScore.append(try currentPitch.asWhite())
+                    } else {
+                        lyScore += try blackNoteSegment(firstWhite: firstWhite, blackNotes: [currentPitch], lastWhite: lastWhite)
+                    }
                 }
             }
         }
@@ -44,19 +69,19 @@ class MelodyNotater {
     private func blackNoteSegment(firstWhite: Pitch?, blackNotes: [Pitch], lastWhite: Pitch?) throws -> [LyString] {
         var lyScore = [LyString]()
         let blackNoteStyle = try blackNoteStyle(firstWhite: firstWhite, blackNotes: blackNotes, lastWhite: lastWhite)
-        if let firstWhite = firstWhite {
-            lyScore.append(try firstWhite.asWhite())
-        }
-        if let lastWhite = lastWhite {
-            lyScore.append(try lastWhite.asWhite())
-        }
+        //        if let firstWhite = firstWhite {
+        //            lyScore.append(try firstWhite.asWhite())
+        //        }
         try blackNotes.forEach { lyScore.append(try $0.asBlack(blackNoteStyle)) }
+        //        if let lastWhite = lastWhite {
+        //            lyScore.append(try lastWhite.asWhite())
+        //        }
         return lyScore
     }
     
     private func blackNoteStyle(firstWhite: Pitch?, blackNotes: [Pitch], lastWhite: Pitch?) throws -> BlackNoteStyle {
-        guard (firstWhite != nil) && (lastWhite != nil) else {
-            throw MelodyError.noWhiteNotes
+        if (firstWhite == nil) && (lastWhite == nil) {
+            return .flat
         }
         guard blackNotes.count > 0 else { throw MelodyError.noBlackNotes }
         let firstBlack = blackNotes.first!.pitchClass
@@ -75,7 +100,7 @@ class MelodyNotater {
             return try firstWhite.avoidIntervals(withBlack: firstBlack).blackNoteStyle
         }
         if let lastWhite = lastWhite?.pitchClass {
-            return try lastWhite.avoidIntervals(withBlack: lastWhite).blackNoteStyle
+            return try lastWhite.avoidIntervals(withBlack: lastBlack).blackNoteStyle
         }
         throw MelodyError.unknown
     }
