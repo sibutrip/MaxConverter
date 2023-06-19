@@ -13,53 +13,5 @@
             continueAfterRunningActions = "No">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ADE084E7-8022-4E24-AACC-5E557DE11AE3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MaxConverter/Notater+Rhythm.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "rhythm(from:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ADE084E7-8022-4E24-AACC-5E557DE11AE3 - 290954a9fb7f8ef6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (Swift.Int) throws -&gt; () in MaxConverter.Notater.rhythm(from: Swift.String) throws -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "MaxConverter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sibutrip/Documents/XCode%20Projects/MaxConverter/MaxConverter/Notater+Rhythm.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "1844">
-               </Location>
-               <Location
-                  uuid = "ADE084E7-8022-4E24-AACC-5E557DE11AE3 - 290954a9fb7f8e97"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (Swift.Int) throws -&gt; () in MaxConverter.Notater.rhythm(from: Swift.String) throws -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "MaxConverter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sibutrip/Documents/XCode%20Projects/MaxConverter/MaxConverter/Notater+Rhythm.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "1924">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
