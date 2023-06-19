@@ -52,6 +52,7 @@ extension Notater {
                 return
             }
             if index < (scoreWithMelody.count - 1) {
+                // this will break if there is an incomplete tuple. usually at the end of a text file
                 let nextLyString = scoreWithMelody[index + 1]
                 if lastTupleLength == index && (nextLyString.isPitch || nextLyString.isRest) {
                     newScore.insert("\n", at: index + indexOffset + 1)
